@@ -8,11 +8,14 @@ export const TodoItems = ({ todos, deleteTodo, onToggleTodo }) => {
           <span
             onClick={() => onToggleTodo(todo.id)}
             style={{ display: "block" }}
+            aria-label="span"
           >
             {todo.done ? "✅" : null}
             {todo.description}
           </span>
-          <button onClick={() => deleteTodo(todo.id)}>Delete Todo</button>
+          <button aria-label="delete" onClick={() => deleteTodo(todo.id)}>
+            Delete Todo
+          </button>
         </li>
       ))}
     </>
